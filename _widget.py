@@ -1,11 +1,10 @@
 """PytSite AddThis Widget.
 """
-from pytsite import reg as _reg, assetman as _assetman, html as _html, settings as _settings, widget as _widget
+from pytsite import assetman as _assetman, html as _html, settings as _settings, widget as _widget
 
 __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
-
 
 _valid_box_types = (
     'inline_share_toolbox', 'addthis_inline_share_toolbox',
@@ -17,6 +16,7 @@ _valid_box_types = (
 class AddThis(_widget.Abstract):
     """AddThis Widget.
     """
+
     def __init__(self, uid: str, **kwargs):
         """Init.
         """
@@ -44,7 +44,7 @@ class AddThis(_widget.Abstract):
         _assetman.add('//s7.addthis.com/js/300/addthis_widget.js#pubid=' + self._pub_id)
 
     def get_html_em(self, **kwargs) -> _html.Element:
-        """Render the widget.
+        """Get HTML element of the widget.
         """
         div = _html.Div(cls=self._box_type)
 

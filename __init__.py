@@ -9,17 +9,24 @@ __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
 
 
-def __init():
+def _init():
     """Init wrapper.
     """
     from pytsite import lang, tpl, permissions, settings
     from . import _settings_form
 
-    lang.register_package(__name__)
-    tpl.register_package(__name__)
+    if not lang.is_package_registered(__name__):
+        lang.register_package(__name__)
 
-    permissions.define_permission('addthis.settings.manage', 'pytsite.addthis@manage_addthis_settings', 'app')
-    settings.define('addthis', _settings_form.Form, 'pytsite.addthis@addthis', 'fa fa-plus-square',
-                    'addthis.settings.manage')
+    if not tpl.is_package_registered(__name__):
+        tpl.register_package(__name__)
 
-__init()
+    if not permissions.is_permission_defined('addthis.settings.manage'):
+        permissions.define_permission('addthis.settings.manage', 'pytsite.addthis@manage_addthis_settings', 'app')
+
+    if not settings.is_defined('addthis'):
+        settings.define('addthis', _settings_form.Form, 'pytsite.addthis@addthis', 'fa fa-plus-square',
+                        'addthis.settings.manage')
+
+
+_init()
