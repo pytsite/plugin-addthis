@@ -17,9 +17,9 @@ class Form(_settings.Form):
         self.add_widget(_widget.input.Text(
             uid='setting_pub_id',
             weight=10,
-            label=_lang.t('pytsite.addthis@pub_id'),
+            label=_lang.t('app.plugins.addthis@pub_id'),
             required=True,
-            help=_lang.t('pytsite.addthis@pub_id_setup_help'),
+            help=_lang.t('app.plugins.addthis@pub_id_setup_help'),
             rules=_validation.rule.Regex(pattern='ra-[0-9a-f]{16}')
         ))
 

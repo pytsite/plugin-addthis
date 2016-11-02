@@ -22,10 +22,10 @@ def _init():
         tpl.register_package(__name__)
 
     if not permissions.is_permission_defined('addthis.settings.manage'):
-        permissions.define_permission('addthis.settings.manage', 'pytsite.addthis@manage_addthis_settings', 'app')
+        permissions.define_permission('addthis.settings.manage', 'app.plugins.addthis@manage_addthis_settings', 'app')
 
     if not settings.is_defined('addthis'):
-        settings.define('addthis', _settings_form.Form, 'pytsite.addthis@addthis', 'fa fa-plus-square',
+        settings.define('addthis', _settings_form.Form, 'app.plugins.addthis@addthis', 'fa fa-plus-square',
                         'addthis.settings.manage')
 
 
