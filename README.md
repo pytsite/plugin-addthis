@@ -1,6 +1,7 @@
 # PytSite AddThis Plugin
 
-This plugin for [PytSite](https://pytsite.xyz) adds [AddsThis](https://addthis.com) functionality to the PytSite.
+[AddsThis](https://addthis.com) plugin for PytSite.
+
 
 ## Installation
 
@@ -10,15 +11,17 @@ This plugin for [PytSite](https://pytsite.xyz) adds [AddsThis](https://addthis.c
 
 ## Changelog
 
-### 0.1.2 (2016-11-02)
+### 0.1.3 (2016-11-16)
+- Added user notification. 
 
-Fixed translation message IDs.
+
+### 0.1.2 (2016-11-02)
+- Fixed translation message IDs.
 
 
 ### 0.1.1 (2016-10-31)
-
-Fixed necessary checks in package initialization.
+- Fixed necessary checks in package initialization.
 
 
 ### 0.1 (2016-10-27)
-First release.
+- First release.

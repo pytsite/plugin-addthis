@@ -8,18 +8,15 @@ __license__ = 'MIT'
 
 
 class Form(_settings.Form):
-    """Setiings Form.
-    """
-
     def _setup_widgets(self):
         """Hook.
         """
         self.add_widget(_widget.input.Text(
             uid='setting_pub_id',
             weight=10,
-            label=_lang.t('app.plugins.addthis@pub_id'),
+            label=_lang.t('addthis@pub_id'),
             required=True,
-            help=_lang.t('app.plugins.addthis@pub_id_setup_help'),
+            help=_lang.t('addthis@pub_id_setup_help'),
             rules=_validation.rule.Regex(pattern='ra-[0-9a-f]{16}')
         ))
 

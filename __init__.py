@@ -3,7 +3,6 @@
 # Public API
 from . import _widget as widget
 
-
 __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
@@ -12,21 +11,25 @@ __license__ = 'MIT'
 def _init():
     """Init wrapper.
     """
-    from pytsite import lang, tpl, permissions, settings
-    from . import _settings_form
+    from pytsite import lang, tpl, permissions, settings, events
+    from . import _settings_form, _eh
 
-    if not lang.is_package_registered(__name__):
-        lang.register_package(__name__)
+    # Resources
+    lang.register_package(__name__, alias='addthis')
+    tpl.register_package(__name__, alias='addthis')
 
-    if not tpl.is_package_registered(__name__):
-        tpl.register_package(__name__)
+    # Lang globals
+    lang.register_global('addthis_admin_settings_url', lambda: settings.form_url('addthis'))
 
-    if not permissions.is_permission_defined('addthis.settings.manage'):
-        permissions.define_permission('addthis.settings.manage', 'app.plugins.addthis@manage_addthis_settings', 'app')
+    # Permissions
+    permissions.define_permission('addthis.settings.manage', 'addthis@manage_addthis_settings', 'app')
 
-    if not settings.is_defined('addthis'):
-        settings.define('addthis', _settings_form.Form, 'app.plugins.addthis@addthis', 'fa fa-plus-square',
-                        'addthis.settings.manage')
+    # Settings
+    settings.define('addthis', _settings_form.Form, 'addthis@addthis', 'fa fa-plus-square',
+                    'addthis.settings.manage')
+
+    # Event handlers
+    events.listen('pytsite.router.dispatch', _eh.router_dispatch)
 
 
 _init()
