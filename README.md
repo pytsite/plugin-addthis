@@ -3,13 +3,11 @@
 [AddsThis](https://addthis.com) plugin for PytSite.
 
 
-## Installation
-
-
-## Usage
-
-
 ## Changelog
+
+### 0.1.4 (2016-12-19)
+- plugin.json updated.
+
 
 ### 0.1.3 (2016-11-16)
 - Added user notification. 

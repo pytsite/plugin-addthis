@@ -1,1 +1,17 @@
-{}
+{
+  "description": {
+    "en": "AddThis support",
+    "ru": "Поддержка AddThis",
+    "uk": "Підримка AddThis"
+  },
+  "url": "https://github.com/pytsite/plugin-addthis",
+  "author": {
+    "name": "Alexander Shepetko",
+    "email": "a@shepetko.com",
+    "url": "https://shepetko.com"
+  },
+  "requires": {
+    "packages": [],
+    "plugins": []
+  }
+}
