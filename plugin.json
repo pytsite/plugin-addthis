@@ -1,8 +1,8 @@
 {
   "description": {
-    "en": "AddThis support",
-    "ru": "Поддержка AddThis",
-    "uk": "Підримка AddThis"
+    "en": "AddThis",
+    "ru": "AddThis",
+    "uk": "AddThis"
   },
   "url": "https://github.com/pytsite/plugin-addthis",
   "author": {
