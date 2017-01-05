@@ -19,7 +19,7 @@ def _init():
     tpl.register_package(__name__, alias='addthis')
 
     # Lang globals
-    lang.register_global('addthis_admin_settings_url', lambda: settings.form_url('addthis'))
+    lang.register_global('addthis_admin_settings_url', lambda language, args: settings.form_url('addthis'))
 
     # Permissions
     permissions.define_permission('addthis.settings.manage', 'addthis@manage_addthis_settings', 'app')
