@@ -5,6 +5,10 @@
 
 ## Changelog
 
+### 0.1.7 (2017-01-12)
+Support latest PytSite `form`'s changes. 
+
+
 ### 0.1.6 (2017-01-05)
 plugin.json updated.
 
