@@ -46,7 +46,7 @@ class AddThis(_widget.Abstract):
     def _get_element(self, **kwargs) -> _html.Element:
         """Get HTML element of the widget.
         """
-        div = _html.Div(cls=self._box_type)
+        div = _html.Div(css=self._box_type)
 
         if self._url:
             div.set_attr('data_url', self._url)
