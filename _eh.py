@@ -10,10 +10,5 @@ __license__ = 'MIT'
 def router_dispatch():
     """'pytsite.router.dispatch' handler.
     """
-    if not _settings.get('addthis.pub_id'):
-        if _auth.get_current_user().has_permission('addthis.settings.manage'):
-            msg = _lang.t('addthis@plugin_setup_required_warning')
-            if not _settings.get('addthis.app_key') or not _settings.get('addthis.app_secret'):
-                _router.session().add_warning_message(msg)
-            else:
-                _router.session().get_warning_message(msg)
+    if not _settings.get('addthis.pub_id') and _auth.get_current_user().has_permission('addthis.settings.manage'):
+        _router.session().add_warning_message(_lang.t('addthis@plugin_setup_required_warning'))
