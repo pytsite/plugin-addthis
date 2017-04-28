@@ -41,7 +41,7 @@ class AddThis(_widget.Abstract):
 
         self._css += ' widget-addthis'
 
-        _assetman.add('//s7.addthis.com/js/300/addthis_widget.js#pubid=' + self._pub_id)
+        _assetman.preload('//s7.addthis.com/js/300/addthis_widget.js#pubid=' + self._pub_id)
 
     def _get_element(self, **kwargs) -> _html.Element:
         """Get HTML element of the widget.
