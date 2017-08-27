@@ -5,6 +5,11 @@
 
 ## Changelog
 
+
+### 0.1.12 (2017-08-27)
+`plugin.json` updated.
+
+
 ### 0.1.11 (2017-04-28)
 Support for latest PytSite asset management changes.
 

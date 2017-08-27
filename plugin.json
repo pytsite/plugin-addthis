@@ -1,4 +1,6 @@
 {
+  "name": "addthis",
+  "version": "0.1.12",
   "description": {
     "en": "AddThis",
     "ru": "AddThis",
