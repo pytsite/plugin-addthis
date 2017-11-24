@@ -6,6 +6,10 @@
 ## Changelog
 
 
+### 1.0.1 (2017-11-24)
+Fixed permission's name.
+
+
 ### 1.0 (2017-11-24)
 Updated to support PytSite-6.0.
 

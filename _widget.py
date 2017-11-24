@@ -1,4 +1,4 @@
-"""PytSite AddThis Widget.
+"""PytSite AddThis Plugin Widgets
 """
 from pytsite import html as _html
 from plugins import assetman as _assetman, settings as _settings, widget as _widget
@@ -15,7 +15,7 @@ _valid_box_types = (
 
 
 class AddThis(_widget.Abstract):
-    """AddThis Widget.
+    """AddThis Widget
     """
 
     def __init__(self, uid: str, **kwargs):
@@ -25,7 +25,7 @@ class AddThis(_widget.Abstract):
 
         self._pub_id = _settings.get('addthis.pub_id')
         if not self._pub_id:
-            raise RuntimeError("Setting 'addthis.pub_id' is not defined.")
+            raise RuntimeError("Setting 'addthis.pub_id' is not defined")
 
         self._box_type = kwargs.get('box_type', _valid_box_types[0])
         if self._box_type not in _valid_box_types:

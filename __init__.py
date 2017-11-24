@@ -23,10 +23,10 @@ def _init():
     lang.register_global('addthis_admin_settings_url', lambda language, args: settings.form_url('addthis'))
 
     # Permissions
-    permissions.define_permission('addthis@settings.manage', 'addthis@manage_addthis_settings', 'app')
+    permissions.define_permission('addthis@manage_settings', 'addthis@manage_addthis_settings', 'app')
 
     # Settings
-    settings.define('addthis', _settings_form.Form, 'addthis@addthis', 'fa fa-plus-square', 'addthis@settings.manage')
+    settings.define('addthis', _settings_form.Form, 'addthis@addthis', 'fa fa-plus-square', 'addthis@manage_settings')
 
     # Events
     router.on_dispatch(_eh.router_dispatch)
