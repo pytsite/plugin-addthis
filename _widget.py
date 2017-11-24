@@ -1,6 +1,7 @@
 """PytSite AddThis Widget.
 """
-from pytsite import assetman as _assetman, html as _html, settings as _settings, widget as _widget
+from pytsite import html as _html
+from plugins import assetman as _assetman, settings as _settings, widget as _widget
 
 __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'
@@ -18,7 +19,7 @@ class AddThis(_widget.Abstract):
     """
 
     def __init__(self, uid: str, **kwargs):
-        """Init.
+        """Init
         """
         super().__init__(uid, **kwargs)
 
@@ -44,7 +45,7 @@ class AddThis(_widget.Abstract):
         _assetman.preload('//s7.addthis.com/js/300/addthis_widget.js#pubid=' + self._pub_id)
 
     def _get_element(self, **kwargs) -> _html.Element:
-        """Get HTML element of the widget.
+        """Get HTML element of the widget
         """
         div = _html.Div(css=self._box_type)
 

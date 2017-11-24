@@ -1,6 +1,7 @@
 """PytSite AddThis Plugin Event Handlers.
 """
-from pytsite import settings as _settings, auth as _auth, lang as _lang, router as _router
+from pytsite import lang as _lang, router as _router
+from plugins import auth as _auth, settings as _settings
 
 __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'

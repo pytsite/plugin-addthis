@@ -1,4 +1,4 @@
-"""AddThis Plugin Init.
+"""PytSite AddThis Plugin
 """
 # Public API
 from . import _widget as widget
@@ -9,26 +9,26 @@ __license__ = 'MIT'
 
 
 def _init():
-    """Init wrapper.
+    """Init wrapper
     """
-    from pytsite import lang, tpl, permissions, settings, router
+    from pytsite import lang, tpl, router
+    from plugins import permissions, settings
     from . import _settings_form, _eh
 
     # Resources
-    lang.register_package(__name__, alias='addthis')
-    tpl.register_package(__name__, alias='addthis')
+    lang.register_package(__name__)
+    tpl.register_package(__name__)
 
     # Lang globals
     lang.register_global('addthis_admin_settings_url', lambda language, args: settings.form_url('addthis'))
 
     # Permissions
-    permissions.define_permission('addthis.settings.manage', 'addthis@manage_addthis_settings', 'app')
+    permissions.define_permission('addthis@settings.manage', 'addthis@manage_addthis_settings', 'app')
 
     # Settings
-    settings.define('addthis', _settings_form.Form, 'addthis@addthis', 'fa fa-plus-square',
-                    'addthis.settings.manage')
+    settings.define('addthis', _settings_form.Form, 'addthis@addthis', 'fa fa-plus-square', 'addthis@settings.manage')
 
-    # Event handlers
+    # Events
     router.on_dispatch(_eh.router_dispatch)
 
 
