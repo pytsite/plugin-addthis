@@ -1,7 +1,7 @@
 """PytSite AddThis Plugin Widgets
 """
-from pytsite import html as _html
-from plugins import assetman as _assetman, settings as _settings, widget as _widget
+from pytsite import html as _html, reg as _reg
+from plugins import assetman as _assetman, widget as _widget
 
 __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'
@@ -23,7 +23,7 @@ class AddThis(_widget.Abstract):
         """
         super().__init__(uid, **kwargs)
 
-        self._pub_id = _settings.get('addthis.pub_id')
+        self._pub_id = _reg.get('addthis.pub_id')
         if not self._pub_id:
             raise RuntimeError("Setting 'addthis.pub_id' is not defined")
 
