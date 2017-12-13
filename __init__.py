@@ -1,15 +1,18 @@
 """PytSite AddThis Plugin
 """
-# Public API
-from . import _widget as widget
-
 __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
 
+from pytsite import plugman as _plugman
 
-def _init():
-    """Init wrapper
+# Public API
+if _plugman.is_installed(__name__):
+    from . import _widget as widget
+
+
+def plugin_load_uwsgi():
+    """Hook
     """
     from pytsite import lang, tpl, router
     from plugins import permissions, settings
@@ -30,6 +33,3 @@ def _init():
 
     # Events
     router.on_dispatch(_eh.router_dispatch)
-
-
-_init()
