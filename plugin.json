@@ -17,6 +17,7 @@
     "plugins": [
       "assetman",
       "auth",
+      "font_awesome",
       "permissions",
       "settings",
       "widget"
