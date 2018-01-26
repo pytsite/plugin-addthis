@@ -6,6 +6,11 @@
 ## Changelog
 
 
+### 1.3 (2018-01-26)
+
+Support for `settings-1.3` added.
+
+
 ### 1.2.2 (2018-01-12)
 
 plugin.json fixed.

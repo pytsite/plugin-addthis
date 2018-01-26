@@ -1,11 +1,11 @@
 """PytSite AddThis Plugin Widgets
 """
-from pytsite import html as _html, reg as _reg
-from plugins import assetman as _assetman, widget as _widget
-
 __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
+
+from pytsite import html as _html, reg as _reg
+from plugins import assetman as _assetman, widget as _widget
 
 _valid_box_types = (
     'inline_share_toolbox', 'addthis_inline_share_toolbox',
