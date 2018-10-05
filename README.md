@@ -6,6 +6,11 @@
 ## Changelog
 
 
+### 2.0 (2018-10-05)
+
+Support of `pytsite-8.x`, `assetman-3.x`, `setting-2.x`, `widget-3.x`.
+
+
 ### 1.3 (2018-01-26)
 
 Support for `settings-1.3` added.

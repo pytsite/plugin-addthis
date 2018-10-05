@@ -1,6 +1,6 @@
 """PytSite AddThis Plugin
 """
-__author__ = 'Alexander Shepetko'
+__author__ = 'Oleksandr Shepetko'
 __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
 
@@ -8,16 +8,12 @@ __license__ = 'MIT'
 from . import _widget as widget
 
 
-def plugin_load_uwsgi():
+def plugin_load_wsgi():
     """Hook
     """
-    from pytsite import lang, tpl, router
+    from pytsite import lang, router
     from plugins import settings
     from . import _settings_form, _eh
-
-    # Resources
-    lang.register_package(__name__)
-    tpl.register_package(__name__)
 
     # Lang globals
     lang.register_global('addthis_admin_settings_url', lambda language, args: settings.form_url('addthis'))
