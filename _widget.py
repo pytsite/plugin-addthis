@@ -39,15 +39,12 @@ class AddThis(_widget.Abstract):
             self._box_type += ' addthis_sharing_toolbox'
 
         self._url = kwargs.get('url')
-
         self._css += ' widget-addthis'
-
-        _assetman.preload('//s7.addthis.com/js/300/addthis_widget.js#pubid=' + self._pub_id)
 
     def _get_element(self, **kwargs) -> _html.Element:
         """Get HTML element of the widget
         """
-        div = _html.Div(css=self._box_type)
+        div = _html.Div(css=self._box_type, data_pub_id=self._pub_id)
 
         if self._url:
             div.set_attr('data_url', self._url)

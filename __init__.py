@@ -19,7 +19,7 @@ def plugin_load_wsgi():
     lang.register_global('addthis_admin_settings_url', lambda language, args: settings.form_url('addthis'))
 
     # Settings
-    settings.define('addthis', _settings_form.Form, 'addthis@addthis', 'fa fa-plus-square', 'dev')
+    settings.define('addthis', _settings_form.Form, 'addthis@addthis', 'fa fas fa-plus-square', 'dev')
 
     # Events
     router.on_dispatch(_eh.router_dispatch)
