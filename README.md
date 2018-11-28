@@ -6,6 +6,11 @@
 ## Changelog
 
 
+### 2.2.2 (2018-11-28)
+
+Widget layout fixed.
+
+
 ### 2.2.1 (2018-11-28)
 
 Missing external JS code load fixed.

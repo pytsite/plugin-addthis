@@ -23,6 +23,9 @@ class AddThis(_widget.Abstract):
         """
         super().__init__(uid, **kwargs)
 
+        self._form_group = False
+        self._has_messages = False
+
         self._pub_id = _reg.get('addthis.pub_id')
         if not self._pub_id:
             raise RuntimeError("Setting 'addthis.pub_id' is not defined")
