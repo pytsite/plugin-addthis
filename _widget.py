@@ -4,8 +4,9 @@ __author__ = 'Oleksandr Shepetko'
 __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
 
-from pytsite import html as _html, reg as _reg
-from plugins import widget as _widget
+import htmler
+from pytsite import reg
+from plugins import widget
 
 _valid_box_types = (
     'inline_share_toolbox', 'addthis_inline_share_toolbox',
@@ -14,7 +15,7 @@ _valid_box_types = (
 )
 
 
-class AddThis(_widget.Abstract):
+class AddThis(widget.Abstract):
     """AddThis Widget
     """
 
@@ -26,7 +27,7 @@ class AddThis(_widget.Abstract):
         self._form_group = False
         self._has_messages = False
 
-        self._pub_id = _reg.get('addthis.pub_id')
+        self._pub_id = reg.get('addthis.pub_id')
         if not self._pub_id:
             raise RuntimeError("Setting 'addthis.pub_id' is not defined")
 
@@ -44,10 +45,10 @@ class AddThis(_widget.Abstract):
         self._url = kwargs.get('url')
         self._css += ' widget-addthis'
 
-    def _get_element(self, **kwargs) -> _html.Element:
+    def _get_element(self, **kwargs) -> htmler.Element:
         """Get HTML element of the widget
         """
-        div = _html.Div(css=self._box_type, data_pub_id=self._pub_id)
+        div = htmler.Div(css=self._box_type, data_pub_id=self._pub_id)
 
         if self._url:
             div.set_attr('data_url', self._url)
